@@ -6,15 +6,22 @@ import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import {Route ,Routes } from 'react-router-dom';
+import Login from './components/Login';
+import Register from './components/Register';
 
 function App() {
   return (
     <>
       <Navbar/>
-      <Home/>
-      <About/>
-      <Services/>
-      <Contact/>
+      <Routes>
+        <Route exact path='/' element={<Home/>} />
+        <Route exact path='/about' element={<About/>} />
+        <Route exact path='/service' element={<Services/>} />
+        <Route exact path='/contact' element={<Contact/>} />
+        <Route exact path='/login' element={<Login/>} />
+        <Route exact path='/register' element={<Register/>} />
+      </Routes>
       <Footer/>
     </>
   );
